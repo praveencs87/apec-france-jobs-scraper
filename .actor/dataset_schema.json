@@ -1,0 +1,50 @@
+{
+  "actorSpecification": 1,
+  "fields": {
+    "type": "object",
+    "properties": {
+      "url": {
+        "type": "string",
+        "title": "URL",
+        "description": "URL of the scraped item"
+      },
+      "title": {
+        "type": "string",
+        "title": "Job Title",
+        "description": "Title of the job"
+      },
+      "company": {
+        "type": "string",
+        "title": "Company",
+        "description": "Company name"
+      },
+      "location": {
+        "type": "string",
+        "title": "Location",
+        "description": "Job location"
+      },
+      "salary": {
+        "type": "string",
+        "title": "Salary",
+        "description": "Job salary"
+      }
+    }
+  },
+  "views": {
+    "overview": {
+      "title": "Overview",
+      "transformation": {
+        "fields": [
+          "url",
+          "title",
+          "company",
+          "location",
+          "salary"
+        ]
+      },
+      "display": {
+        "component": "table"
+      }
+    }
+  }
+}

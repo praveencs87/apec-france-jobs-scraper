@@ -1,0 +1,11 @@
+{
+  "actorOutputSchemaVersion": 1,
+  "title": "Output schema of apec-france-jobs-scraper",
+  "properties": {
+    "results": {
+      "type": "string",
+      "title": "Extracted Data (Dataset)",
+      "template": "{{links.apiDefaultDatasetUrl}}/items"
+    }
+  }
+}

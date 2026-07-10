@@ -1,0 +1,20 @@
+{
+  "actorSpecification": 1,
+  "name": "apec-france-jobs-scraper",
+  "title": "Apec France Jobs Scraper",
+  "description": "Scrape data from apec.",
+  "version": "0.0",
+  "meta": {
+    "templateId": "ts-crawlee-playwright"
+  },
+  "input": "../input_schema.json",
+  "dockerfile": "../Dockerfile",
+  "pricing": {
+    "pricingModel": "PAY_PER_EVENT",
+    "pricePerEventUsd": 0.002
+  },
+  "storages": {
+    "dataset": "./dataset_schema.json"
+  },
+  "output": "./output_schema.json"
+}
