@@ -4,7 +4,7 @@ import { PlaywrightCrawler } from 'crawlee';
 await Actor.init();
 
 const input = (await Actor.getInput()) || {};
-const { startUrls = [], searchQueries = [], maxItems = 100, proxyConfig } = input;
+const { startUrls = [], maxItems = 100, proxyConfig } = input;
 
 const proxyConfiguration = await Actor.createProxyConfiguration(proxyConfig);
 
@@ -77,11 +77,12 @@ const crawler = new PlaywrightCrawler({
 
 const initialRequests = [];
 
-if (searchQueries && searchQueries.length > 0) {
-    for (const query of searchQueries) {
-        initialRequests.push(`https://www.apec.fr/candidat/recherche-emploi.html/emploi?motsCles=${encodeURIComponent(query)}`);
+if (startUrls && startUrls.length > 0) {
+    for (const req of startUrls) {
+        initialRequests.push(typeof req === 'string' ? req : req.url);
     }
 } else {
+    log.warning('No startUrls provided. Using default.');
     initialRequests.push('https://www.apec.fr/candidat/recherche-emploi.html/emploi');
 }
 

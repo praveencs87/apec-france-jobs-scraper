@@ -3,16 +3,13 @@
   "type": "object",
   "schemaVersion": 1,
   "properties": {
-    "searchQueries": {
-      "title": "Search Queries",
+    "startUrls": {
+      "title": "Start URLs",
       "type": "array",
-      "description": "List of keywords to search for.",
-      "editor": "stringList",
-      "default": [
-        "engineer"
-      ],
+      "description": "List of Apec job search URLs to scrape.",
+      "editor": "requestListSources",
       "prefill": [
-        "engineer"
+        { "url": "https://www.apec.fr/candidat/recherche-emploi.html/emploi?motsCles=engineer" }
       ]
     },
     "maxItems": {
@@ -30,5 +27,8 @@
         "useApifyProxy": true
       }
     }
-  }
+  },
+  "required": [
+    "startUrls"
+  ]
 }
